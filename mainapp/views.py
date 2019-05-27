@@ -159,7 +159,6 @@ def display_car(request):
         name = request.session.get('name')
         for i in goods_info:
             all_num += i.amount
-        # print(amount)
         return render(request, 'car.html',
                       {'goods_info': goods_info, 'total_price': total_price, 'save_price': save_price,
                        'all_num': all_num, 'name': name})
@@ -169,7 +168,6 @@ def display_car(request):
 # 删除购物车中的图书
 def del_book_info(request):
     bookid = request.GET.get('bookid')
-    # print(bookid)
     info = request.session.get('cart')
     info.delete_cart(bookid)
     request.session['cart'] = info
@@ -180,7 +178,6 @@ def change_goodsNum(request):
     cart = request.session.get('cart')
     bookid = request.GET.get('bookid')
     amount = request.GET.get('amount')
-    # print(bookid,amount)
     cart.modify_cart(bookid,amount)
     request.session['cart'] = cart
     total_price = cart.total_price
