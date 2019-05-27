@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>表单之邮箱验证.html</title>
+
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+    <style type="text/css">
+		body{
+			background-image: url(./images/t0121c_big_ie.jpg);
+			background-repeat: no-repeat;
+			/* 当内容高度大于图片高度时，背景图像的位置相对于viewport固定 */
+			background-attachment: fixed;  /*此条属性必须设置否则可能无效*/
+			/* 让背景图基于容器大小伸缩 */
+			background-size: cover;
+			/* 设置背景颜色，背景图加载过程中会显示背景色 */
+			background-color: #CCCCCC;
+		}
+		#user_reg{
+			font-family: 微软雅黑;
+			font-size: 40px;
+			text-align: center;
+			margin-top: 200px;
+		}
+		form{
+			width: 600px;					/*设置宽度，方便使其居中*/
+			margin: 40px auto auto auto;	/*上右下左*/
+			font-size: 25px;
+		}
+		input{
+			height: 30px;
+			width: 14em;
+			font-size: 20px;
+		}
+		#username[value]{
+			color: gray;
+		}
+		#username1[value]{
+			color: black;
+		}
+	</style>
+  </head>
+
+  <script type="text/javascript">
+	//onblur失去焦点事件，用户离开输入框时执行 JavaScript 代码：
+	//函数：验证邮箱格式
+  	function isEmail(strEmail){
+  		//定义正则表达式的变量:邮箱正则
+  		var reg=/^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+  		console.log(strEmail);
+  		//文本框不为空，并且验证邮箱正则成功，给出正确提示
+  		if(strEmail != null && strEmail.search(reg) != -1)
+  		{
+  			document.getElementById("test_user").innerHTML = "<font color='green' size='4px'>√邮箱格式正确！</font>";
+  		}else{
+  			document.getElementById("test_user").innerHTML = "<font color='red' size='4px'>邮箱格式错误！</font>";
+  		}
+  	}
+  </script>
+
+ <body>
+  	<div id="user_reg">验证邮箱:</div>
+	<form action="" method="post" name="form">
+		<table>
+			<tr>
+				<td>请输入账号：</td>
+				<td><input type="text" id="username" name="username" value="只能用邮箱注册"
+				onclick="username.value='',username.id='username1'"
+				onblur="isEmail(this.value)"/></td>
+				<td id="test_user">&nbsp;</td>
+			</tr>
+		</table>
+	</form>
+</body>
+
+</html>

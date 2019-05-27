@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script src="/static/js/jquery1.4.2.js"></script>
+	<link rel="shortcut icon" href="/static/images/favicon.ico?v=20160901" type="image/x-icon">
+    <link href="/static/css/shopping_cart_new.css" rel="stylesheet" type="text/css">
+	<link href="/static/css/footer_150526.css" rel="stylesheet" type="text/css" />
+</head>
+<body style="padding-bottom:82px">
+
+<link href="/static/css/header_960_150611.css" rel="stylesheet" type="text/css">
+<script src="/static/js/pagetop2015_0827.js" charset="gb2312" type="text/javascript"></script>
+
+<div id="hd">
+<div id="tools">
+<div class="tools">
+    <div class="ddnewhead_operate" dd_name="顶链接">
+
+        <div class="ddnewhead_welcome" display="none;">
+            <span id="nickname"><span class="hi">Hi，<a href="http://myhome.dangdang.com/" class="login_link" target="_blank"><b>159**…</b></a><a href="javascript:PageTopSignOut();" target="_self">[退出]</a></span></span>
+            <div class="tel_pop" style="display:none" id="__ddnav_sjdd" onmouseover="showgaoji('a_phonechannel','__ddnav_sjdd');" onmouseout="hideotherchannel('a_phonechannel','__ddnav_sjdd');">
+                <a target="_blank" href="http://t.dangdang.com/20130220_ydmr" class="title"><i class="icon_tel"></i>手机当当</a><i class="title_shadow"></i>
+                <ul class="tel_pop_box">
+                    <li><a href="http://t.dangdang.com/20130220_ydmr" dd_name="手机二维码"><span>当当手机客户端</span><img src="http://img3.ddimg.cn/00363/doc/erweima2.png"><span class="text">随手查订单<br>随时享优惠</span></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="new_head_znx" id="znx_content" style="display:none;"></div>
+    </div>
+</div>
+</div>
+<div id="header_end"></div>
+<!--CreateDate  2016-09-28 11:30:01--></div>
+{#<form action="http://search.dangdang.com/search.aspx" id="bootpagetopSearch" name="bootpagetopSearch" method="GET"></form>#}
+{#<script type="text/javascript">var nick_num = 0;initHeaderOperate();</script><script type="text/javascript" src="http://orderb.dangdang.com/queryunpaid?callback=Unpaid_Data"></script>#}
+		<div class="shoppingcart_wrapper" id="ad_cpt_11850"><div><a href="http://a.dangdang.com/tjump.php?q=ddo84XQOf357bOs8tXGg5%2F%2F0oVoDImt3DFWsMqu7ZMSVsfUMeOQJueASNiMLjq%2FdrXMLCKnVfyKEahteAh1ih%2ByKYrKGzhvL20LVbDzObRambBA0YPpivy5hR5foQ4Rt%2BTB" target="_blank" rel="nofollow"><img src="http://img62.ddimg.cn/2017/1/11/2017011111344969879.jpg"></a></div></div>
+<div class="logo_line">
+    <div class="w960">
+        <div class="shopping_procedure01 shopping_procedure "><span>我的购物车</span><span class="current">填写订单</span><span>完成订单</span></div>
+        <div class="logo"><a href="#"><img src="/static/images/bz_logo_car.jpg" alt=""></a></div>
+    </div>
+</div>
+<div class="indent_con">
+ <div class="shdz">
+    	<h3>订单1（百知网配送）</h3>
+        <table width="100%" border="0" cellpadding="0" cellspacing="0">
+            <tbody><tr style="height:30px; line-height:30px;">
+                <th width="34%">商品名称</th>
+                <th width="11%">所在仓库</th>
+                <th width="13%">百知价</th>
+                <th width="11%">促销价</th>
+                <th width="9%">数量</th>
+                <th width="11%">小计</th>
+                <th width="11%">操作</th>
+            </tr>
+
+                {% for per_goods_info in goods_info %}
+                    <tr>
+                        <td>{{ per_goods_info.book.book_name }}</td>
+                        <td align="center">{{ per_goods_info.book.edition }}</td>
+                        <td align="center">¥{{ per_goods_info.book.paper }}（66折）</td>
+                        <td align="center">--</td>
+                        <td align="center">{{ per_goods_info.amount }}</td>
+                        <td align="center">¥{{ per_goods_info.book.market_price }}</td>
+                        <td align="center"><a href="#">放回购物车</a></td>
+                    </tr>
+                {% endfor %}
+
+
+                     <tr>
+                        <td colspan="2"><input type="checkbox" >此订单作为礼品赠送他人</td>
+                        <td colspan="2"><strong>运费：</strong>当确认送货方式后显示</td>
+                        <td class="table_zj" colspan="3"><strong>小计总额：</strong><em>¥{{ total_price }}</em></td>
+                    </tr>
+        </tbody></table>
+    </div>
+</div>>
